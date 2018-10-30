@@ -15,6 +15,7 @@ namespace MathApp
         private GameMode gameMode;
         private Game game;
         private int questionNumber;
+        private bool nextQuestion;
 
         public GameForm()
         {
@@ -23,13 +24,14 @@ namespace MathApp
             gameMode = GameMode.Addition;
             game = new Game(gameMode);
             questionNumber = 0;
+            nextQuestion = false;
         }
 
         public void newGame(GameMode gameMode)
         {
             this.gameMode = gameMode;
             this.game = new Game(gameMode);
-            questionLbl.Text = game.getQuestion(questionNumber);
+            questionLbl.Text = game.nextQuestion();
         }
 
         private void answerTxtBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -44,7 +46,30 @@ namespace MathApp
 
         private void submitNextBtn_Click(object sender, EventArgs e)
         {
-
+            if(answerTxtBox.Text != "")
+            {
+                if (!nextQuestion)
+                {
+                    correctLbl.Visible = true;
+                    if(game.answers[questionNumber] == Int32.Parse(answerTxtBox.Text))
+                    {
+                        correctLbl.Text = "Correct!";
+                    } else
+                    {
+                        correctLbl.Text = "Incorrect!";
+                    }
+                    nextQuestion = true;
+                    submitNextBtn.Text = "NEXT QUESTION";
+                } else
+                {
+                    answerTxtBox.Text = "";
+                    correctLbl.Visible = false;
+                    questionNumber++;
+                    questionLbl.Text = game.nextQuestion();
+                    submitNextBtn.Text = "SUBMIT";
+                    nextQuestion = false;
+                }
+            }
         }
     }
 }

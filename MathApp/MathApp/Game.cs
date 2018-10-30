@@ -14,6 +14,7 @@ namespace MathApp
 
         private Random rnd;
         private bool gameOver;
+        private int currentQuestion;
 
         public Game(GameMode gameMode)
         {
@@ -23,11 +24,14 @@ namespace MathApp
             answers = new int[10];
             generateQuestions();
             gameOver = false;
+            currentQuestion = 0;
         }
 
-        public string getQuestion(int qNumber)
+        public string nextQuestion()
         {
-            return questions[qNumber];
+            string question = questions[currentQuestion];
+            currentQuestion++;
+            return question;
         }
 
         private void generateQuestions()
