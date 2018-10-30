@@ -12,13 +12,24 @@ namespace MathApp
 {
     public partial class GameForm : Form
     {
-        public int gameMode;
+        private GameMode gameMode;
+        private Game game;
+        private int questionNumber;
 
         public GameForm()
         {
             InitializeComponent();
 
-            gameMode = 0;
+            gameMode = GameMode.Addition;
+            game = new Game(gameMode);
+            questionNumber = 0;
+        }
+
+        public void newGame(GameMode gameMode)
+        {
+            this.gameMode = gameMode;
+            this.game = new Game(gameMode);
+            questionLbl.Text = game.getQuestion(questionNumber);
         }
 
         private void answerTxtBox_KeyPress(object sender, KeyPressEventArgs e)

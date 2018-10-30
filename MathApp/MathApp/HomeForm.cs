@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace MathApp
 {
+    public enum GameMode { Addition, Subtraction, Multiplication, Division };
+
     public partial class HomeForm : Form
     {
         GameForm gameForm;
@@ -17,12 +19,8 @@ namespace MathApp
         ScoreForm scoreForm;
 
         User user;
-
-        string username;
-        int age;
-        int gameMode;
-
-        enum GameMode {Addition, Subtraction, Multiplication, Division};
+        
+        GameMode gameMode;
 
         public HomeForm()
         {
@@ -35,7 +33,7 @@ namespace MathApp
 
           
             DisplayUserData();
-            gameMode = 0;
+            gameMode = GameMode.Addition;
 
         }
 
@@ -59,9 +57,9 @@ namespace MathApp
         private void playBtn_Click(object sender, EventArgs e)
         {
             var checkedButton = gameModesGrpBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            int gameMode = checkedButton.TabIndex;
+            gameMode = (GameMode)checkedButton.TabIndex;
+            gameForm.newGame(gameMode);
             Hide();
-            gameForm.gameMode = gameMode;
             gameForm.ShowDialog();
             Show();
         }

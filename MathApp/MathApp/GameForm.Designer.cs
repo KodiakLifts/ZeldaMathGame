@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.startStopBtn = new System.Windows.Forms.Button();
             this.submitNextBtn = new System.Windows.Forms.Button();
             this.questionLbl = new System.Windows.Forms.Label();
             this.answerTxtBox = new System.Windows.Forms.TextBox();
@@ -38,15 +37,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // startStopBtn
-            // 
-            this.startStopBtn.Location = new System.Drawing.Point(164, 381);
-            this.startStopBtn.Name = "startStopBtn";
-            this.startStopBtn.Size = new System.Drawing.Size(100, 23);
-            this.startStopBtn.TabIndex = 0;
-            this.startStopBtn.Text = "START";
-            this.startStopBtn.UseVisualStyleBackColor = true;
             // 
             // submitNextBtn
             // 
@@ -103,7 +93,6 @@
             this.Controls.Add(this.answerTxtBox);
             this.Controls.Add(this.questionLbl);
             this.Controls.Add(this.submitNextBtn);
-            this.Controls.Add(this.startStopBtn);
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";
@@ -114,8 +103,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button startStopBtn;
         private System.Windows.Forms.Button submitNextBtn;
         private System.Windows.Forms.Label questionLbl;
         private System.Windows.Forms.TextBox answerTxtBox;
