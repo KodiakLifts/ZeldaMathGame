@@ -16,8 +16,10 @@ namespace MathApp
         private UserForm userForm;
         private ScoreForm scoreForm;
 
-        public string username;
-        public int age;
+        private string username;
+        private int age;
+
+        private enum GameMode {Addition, Subtraction, Multiplication, Division };
 
         public HomeForm()
         {
@@ -27,21 +29,33 @@ namespace MathApp
             userForm = new UserForm();
             scoreForm = new ScoreForm();
 
-            
+            DisplayUserData();
+
+        }
+
+        private void DisplayUserData()
+        {
+            Hide();
+            userForm.ShowDialog();
+            Show();
+
+            username = userForm.username;
+            age = userForm.age;
+
+            usernameLbl.Text = "Name: " + username;
+            ageLbl.Text = "Age: " + age;
         }
 
         private void editUserBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            userForm.ShowDialog();
-            this.Show();
+            DisplayUserData();
         }
 
         private void playBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             gameForm.ShowDialog();
-            this.Show();
+            Show();
         }
     }
 }

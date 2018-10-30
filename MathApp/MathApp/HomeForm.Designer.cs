@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.editUserBtn = new System.Windows.Forms.Button();
-            this.userDataLbl = new System.Windows.Forms.Label();
+            this.usernameLbl = new System.Windows.Forms.Label();
             this.gameModesGrpBox = new System.Windows.Forms.GroupBox();
             this.divisionRadioBtn = new System.Windows.Forms.RadioButton();
             this.multiplicationRadioBtn = new System.Windows.Forms.RadioButton();
@@ -37,6 +37,7 @@
             this.addittionRadioBtn = new System.Windows.Forms.RadioButton();
             this.playBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ageLbl = new System.Windows.Forms.Label();
             this.gameModesGrpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,14 +52,14 @@
             this.editUserBtn.UseVisualStyleBackColor = true;
             this.editUserBtn.Click += new System.EventHandler(this.editUserBtn_Click);
             // 
-            // userDataLbl
+            // usernameLbl
             // 
-            this.userDataLbl.AutoSize = true;
-            this.userDataLbl.Location = new System.Drawing.Point(53, 29);
-            this.userDataLbl.Name = "userDataLbl";
-            this.userDataLbl.Size = new System.Drawing.Size(60, 13);
-            this.userDataLbl.TabIndex = 1;
-            this.userDataLbl.Text = "Name, Age";
+            this.usernameLbl.AutoSize = true;
+            this.usernameLbl.Location = new System.Drawing.Point(34, 29);
+            this.usernameLbl.Name = "usernameLbl";
+            this.usernameLbl.Size = new System.Drawing.Size(38, 13);
+            this.usernameLbl.TabIndex = 1;
+            this.usernameLbl.Text = "Name:";
             // 
             // gameModesGrpBox
             // 
@@ -136,15 +137,25 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // ageLbl
+            // 
+            this.ageLbl.AutoSize = true;
+            this.ageLbl.Location = new System.Drawing.Point(34, 46);
+            this.ageLbl.Name = "ageLbl";
+            this.ageLbl.Size = new System.Drawing.Size(29, 13);
+            this.ageLbl.TabIndex = 9;
+            this.ageLbl.Text = "Age:";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 381);
+            this.Controls.Add(this.ageLbl);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.playBtn);
             this.Controls.Add(this.gameModesGrpBox);
-            this.Controls.Add(this.userDataLbl);
+            this.Controls.Add(this.usernameLbl);
             this.Controls.Add(this.editUserBtn);
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -160,7 +171,7 @@
         #endregion
 
         private System.Windows.Forms.Button editUserBtn;
-        private System.Windows.Forms.Label userDataLbl;
+        private System.Windows.Forms.Label usernameLbl;
         private System.Windows.Forms.GroupBox gameModesGrpBox;
         private System.Windows.Forms.RadioButton divisionRadioBtn;
         private System.Windows.Forms.RadioButton multiplicationRadioBtn;
@@ -168,6 +179,7 @@
         private System.Windows.Forms.RadioButton addittionRadioBtn;
         private System.Windows.Forms.Button playBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label ageLbl;
     }
 }
 

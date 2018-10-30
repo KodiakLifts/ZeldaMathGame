@@ -32,9 +32,10 @@
             this.ageLbl = new System.Windows.Forms.Label();
             this.nameTxtBox = new System.Windows.Forms.TextBox();
             this.userFormLbl = new System.Windows.Forms.Label();
-            this.okBtn = new System.Windows.Forms.Button();
+            this.confirmBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ageNumeric = new System.Windows.Forms.NumericUpDown();
+            this.nameValidationLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ageNumeric)).BeginInit();
             this.SuspendLayout();
@@ -73,16 +74,16 @@
             this.userFormLbl.TabIndex = 4;
             this.userFormLbl.Text = "Math Game";
             // 
-            // okBtn
+            // confirmBtn
             // 
-            this.okBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.okBtn.Location = new System.Drawing.Point(207, 143);
-            this.okBtn.Name = "okBtn";
-            this.okBtn.Size = new System.Drawing.Size(75, 23);
-            this.okBtn.TabIndex = 6;
-            this.okBtn.Text = "Confirm";
-            this.okBtn.UseVisualStyleBackColor = true;
-            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
+            this.confirmBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.confirmBtn.Location = new System.Drawing.Point(207, 143);
+            this.confirmBtn.Name = "confirmBtn";
+            this.confirmBtn.Size = new System.Drawing.Size(75, 23);
+            this.confirmBtn.TabIndex = 6;
+            this.confirmBtn.Text = "Confirm";
+            this.confirmBtn.UseVisualStyleBackColor = true;
+            this.confirmBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
             // pictureBox1
             // 
@@ -109,14 +110,26 @@
             0,
             0});
             // 
+            // nameValidationLbl
+            // 
+            this.nameValidationLbl.AutoSize = true;
+            this.nameValidationLbl.Location = new System.Drawing.Point(305, 77);
+            this.nameValidationLbl.Name = "nameValidationLbl";
+            this.nameValidationLbl.Size = new System.Drawing.Size(119, 13);
+            this.nameValidationLbl.TabIndex = 9;
+            this.nameValidationLbl.Text = "You must enter a name.";
+            this.nameValidationLbl.Visible = false;
+            // 
             // UserForm
             // 
+            this.AcceptButton = this.confirmBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 381);
+            this.Controls.Add(this.nameValidationLbl);
             this.Controls.Add(this.ageNumeric);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.okBtn);
+            this.Controls.Add(this.confirmBtn);
             this.Controls.Add(this.userFormLbl);
             this.Controls.Add(this.nameTxtBox);
             this.Controls.Add(this.ageLbl);
@@ -138,8 +151,9 @@
         private System.Windows.Forms.Label ageLbl;
         private System.Windows.Forms.TextBox nameTxtBox;
         private System.Windows.Forms.Label userFormLbl;
-        private System.Windows.Forms.Button okBtn;
+        private System.Windows.Forms.Button confirmBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown ageNumeric;
+        private System.Windows.Forms.Label nameValidationLbl;
     }
 }
