@@ -17,8 +17,6 @@ namespace MathApp
         ScoreForm scoreForm;
 
         User user;
-        List<User> userList;
-
 
         string username;
         int age;
@@ -34,7 +32,6 @@ namespace MathApp
             userForm = new UserForm();
             scoreForm = new ScoreForm();
             user = new User("", 0);
-            userList = new List<User>();
 
           
             DisplayUserData();
