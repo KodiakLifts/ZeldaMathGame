@@ -13,14 +13,11 @@ namespace MathApp
     public partial class UserForm : Form
     {
         public string username;
-        public int age;
+        public int userAge;
 
         public UserForm()
         {
             InitializeComponent();
-            username = "";
-            age = 0;
-            
         }
 
         private void okBtn_Click(object sender, EventArgs e)
@@ -29,7 +26,7 @@ namespace MathApp
             {
                 nameValidationLbl.Visible = false;
                 username = nameTxtBox.Text;
-                age =  (int)ageNumeric.Value;
+                userAge =  (int)ageNumeric.Value;
 
                 Hide();
             } else

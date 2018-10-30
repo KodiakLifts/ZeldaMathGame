@@ -16,6 +16,10 @@ namespace MathApp
         UserForm userForm;
         ScoreForm scoreForm;
 
+        User user;
+        List<User> userList;
+
+
         string username;
         int age;
         int gameMode;
@@ -29,10 +33,12 @@ namespace MathApp
             gameForm = new GameForm();
             userForm = new UserForm();
             scoreForm = new ScoreForm();
+            user = new User("", 0);
+            userList = new List<User>();
 
-            gameMode = 0;
-
+          
             DisplayUserData();
+            gameMode = 0;
 
         }
 
@@ -40,13 +46,12 @@ namespace MathApp
         {
             Hide();
             userForm.ShowDialog();
+            user.name = userForm.username;
+            user.age = userForm.userAge;
             Show();
 
-            username = userForm.username;
-            age = userForm.age;
-
-            usernameLbl.Text = "Name: " + username;
-            ageLbl.Text = "Age: " + age;
+            usernameLbl.Text = "Name: " + user.name;
+            ageLbl.Text = "Age: " + user.age;
         }
 
         private void editUserBtn_Click(object sender, EventArgs e)
