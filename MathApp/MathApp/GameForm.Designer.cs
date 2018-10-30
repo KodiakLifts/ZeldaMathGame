@@ -41,7 +41,7 @@
             // 
             // startStopBtn
             // 
-            this.startStopBtn.Location = new System.Drawing.Point(204, 381);
+            this.startStopBtn.Location = new System.Drawing.Point(164, 381);
             this.startStopBtn.Name = "startStopBtn";
             this.startStopBtn.Size = new System.Drawing.Size(100, 23);
             this.startStopBtn.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // submitNextBtn
             // 
-            this.submitNextBtn.Location = new System.Drawing.Point(204, 352);
+            this.submitNextBtn.Location = new System.Drawing.Point(183, 343);
             this.submitNextBtn.Name = "submitNextBtn";
             this.submitNextBtn.Size = new System.Drawing.Size(100, 23);
             this.submitNextBtn.TabIndex = 1;
@@ -60,7 +60,7 @@
             // questionLbl
             // 
             this.questionLbl.AutoSize = true;
-            this.questionLbl.Location = new System.Drawing.Point(158, 329);
+            this.questionLbl.Location = new System.Drawing.Point(137, 320);
             this.questionLbl.Name = "questionLbl";
             this.questionLbl.Size = new System.Drawing.Size(40, 13);
             this.questionLbl.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // answerTxtBox
             // 
-            this.answerTxtBox.Location = new System.Drawing.Point(204, 326);
+            this.answerTxtBox.Location = new System.Drawing.Point(183, 317);
             this.answerTxtBox.Name = "answerTxtBox";
             this.answerTxtBox.Size = new System.Drawing.Size(100, 20);
             this.answerTxtBox.TabIndex = 3;
@@ -77,7 +77,7 @@
             // correctLbl
             // 
             this.correctLbl.AutoSize = true;
-            this.correctLbl.Location = new System.Drawing.Point(310, 329);
+            this.correctLbl.Location = new System.Drawing.Point(289, 320);
             this.correctLbl.Name = "correctLbl";
             this.correctLbl.Size = new System.Drawing.Size(44, 13);
             this.correctLbl.TabIndex = 4;
@@ -86,9 +86,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(84, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(96, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(343, 308);
+            this.pictureBox1.Size = new System.Drawing.Size(278, 278);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 424);
+            this.ClientSize = new System.Drawing.Size(474, 381);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.correctLbl);
             this.Controls.Add(this.answerTxtBox);

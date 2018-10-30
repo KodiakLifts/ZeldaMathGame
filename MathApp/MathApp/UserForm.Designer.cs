@@ -42,7 +42,7 @@
             // nameLbl
             // 
             this.nameLbl.AutoSize = true;
-            this.nameLbl.Location = new System.Drawing.Point(179, 79);
+            this.nameLbl.Location = new System.Drawing.Point(154, 77);
             this.nameLbl.Name = "nameLbl";
             this.nameLbl.Size = new System.Drawing.Size(38, 13);
             this.nameLbl.TabIndex = 0;
@@ -52,7 +52,7 @@
             // ageLbl
             // 
             this.ageLbl.AutoSize = true;
-            this.ageLbl.Location = new System.Drawing.Point(188, 105);
+            this.ageLbl.Location = new System.Drawing.Point(163, 103);
             this.ageLbl.Name = "ageLbl";
             this.ageLbl.Size = new System.Drawing.Size(29, 13);
             this.ageLbl.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // nameTxtBox
             // 
-            this.nameTxtBox.Location = new System.Drawing.Point(223, 76);
+            this.nameTxtBox.Location = new System.Drawing.Point(198, 74);
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.Size = new System.Drawing.Size(100, 20);
             this.nameTxtBox.TabIndex = 2;
@@ -70,7 +70,7 @@
             // userFormLbl
             // 
             this.userFormLbl.AutoSize = true;
-            this.userFormLbl.Location = new System.Drawing.Point(238, 33);
+            this.userFormLbl.Location = new System.Drawing.Point(213, 31);
             this.userFormLbl.Name = "userFormLbl";
             this.userFormLbl.Size = new System.Drawing.Size(62, 13);
             this.userFormLbl.TabIndex = 4;
@@ -79,7 +79,7 @@
             // okBtn
             // 
             this.okBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.okBtn.Location = new System.Drawing.Point(232, 145);
+            this.okBtn.Location = new System.Drawing.Point(207, 143);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(75, 23);
             this.okBtn.TabIndex = 6;
@@ -88,15 +88,15 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 197);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 174);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(517, 151);
+            this.pictureBox1.Size = new System.Drawing.Size(449, 195);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // ageNumeric
             // 
-            this.ageNumeric.Location = new System.Drawing.Point(223, 102);
+            this.ageNumeric.Location = new System.Drawing.Point(198, 100);
             this.ageNumeric.Minimum = new decimal(new int[] {
             1,
             0,
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 360);
+            this.ClientSize = new System.Drawing.Size(474, 381);
             this.Controls.Add(this.ageNumeric);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.okBtn);
