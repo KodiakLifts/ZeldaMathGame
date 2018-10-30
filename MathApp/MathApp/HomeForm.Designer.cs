@@ -31,10 +31,10 @@
             this.editUserBtn = new System.Windows.Forms.Button();
             this.userDataLbl = new System.Windows.Forms.Label();
             this.gameModesGrpBox = new System.Windows.Forms.GroupBox();
-            this.addittionRadioBtn = new System.Windows.Forms.RadioButton();
-            this.subtractionRadioBtn = new System.Windows.Forms.RadioButton();
-            this.multiplicationRadioBtn = new System.Windows.Forms.RadioButton();
             this.divisionRadioBtn = new System.Windows.Forms.RadioButton();
+            this.multiplicationRadioBtn = new System.Windows.Forms.RadioButton();
+            this.subtractionRadioBtn = new System.Windows.Forms.RadioButton();
+            this.addittionRadioBtn = new System.Windows.Forms.RadioButton();
             this.playBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gameModesGrpBox.SuspendLayout();
@@ -49,6 +49,7 @@
             this.editUserBtn.TabIndex = 0;
             this.editUserBtn.Text = "Edit User";
             this.editUserBtn.UseVisualStyleBackColor = true;
+            this.editUserBtn.Click += new System.EventHandler(this.editUserBtn_Click);
             // 
             // userDataLbl
             // 
@@ -72,28 +73,16 @@
             this.gameModesGrpBox.TabStop = false;
             this.gameModesGrpBox.Text = "Game Mode";
             // 
-            // addittionRadioBtn
+            // divisionRadioBtn
             // 
-            this.addittionRadioBtn.AutoSize = true;
-            this.addittionRadioBtn.Checked = true;
-            this.addittionRadioBtn.Location = new System.Drawing.Point(6, 19);
-            this.addittionRadioBtn.Name = "addittionRadioBtn";
-            this.addittionRadioBtn.Size = new System.Drawing.Size(63, 17);
-            this.addittionRadioBtn.TabIndex = 0;
-            this.addittionRadioBtn.TabStop = true;
-            this.addittionRadioBtn.Text = "Addition";
-            this.addittionRadioBtn.UseVisualStyleBackColor = true;
-            // 
-            // subtractionRadioBtn
-            // 
-            this.subtractionRadioBtn.AutoSize = true;
-            this.subtractionRadioBtn.Location = new System.Drawing.Point(6, 56);
-            this.subtractionRadioBtn.Name = "subtractionRadioBtn";
-            this.subtractionRadioBtn.Size = new System.Drawing.Size(79, 17);
-            this.subtractionRadioBtn.TabIndex = 1;
-            this.subtractionRadioBtn.TabStop = true;
-            this.subtractionRadioBtn.Text = "Subtraction";
-            this.subtractionRadioBtn.UseVisualStyleBackColor = true;
+            this.divisionRadioBtn.AutoSize = true;
+            this.divisionRadioBtn.Location = new System.Drawing.Point(6, 131);
+            this.divisionRadioBtn.Name = "divisionRadioBtn";
+            this.divisionRadioBtn.Size = new System.Drawing.Size(62, 17);
+            this.divisionRadioBtn.TabIndex = 3;
+            this.divisionRadioBtn.TabStop = true;
+            this.divisionRadioBtn.Text = "Division";
+            this.divisionRadioBtn.UseVisualStyleBackColor = true;
             // 
             // multiplicationRadioBtn
             // 
@@ -106,16 +95,28 @@
             this.multiplicationRadioBtn.Text = "Multiplication";
             this.multiplicationRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // divisionRadioBtn
+            // subtractionRadioBtn
             // 
-            this.divisionRadioBtn.AutoSize = true;
-            this.divisionRadioBtn.Location = new System.Drawing.Point(6, 131);
-            this.divisionRadioBtn.Name = "divisionRadioBtn";
-            this.divisionRadioBtn.Size = new System.Drawing.Size(62, 17);
-            this.divisionRadioBtn.TabIndex = 3;
-            this.divisionRadioBtn.TabStop = true;
-            this.divisionRadioBtn.Text = "Division";
-            this.divisionRadioBtn.UseVisualStyleBackColor = true;
+            this.subtractionRadioBtn.AutoSize = true;
+            this.subtractionRadioBtn.Location = new System.Drawing.Point(6, 56);
+            this.subtractionRadioBtn.Name = "subtractionRadioBtn";
+            this.subtractionRadioBtn.Size = new System.Drawing.Size(79, 17);
+            this.subtractionRadioBtn.TabIndex = 1;
+            this.subtractionRadioBtn.TabStop = true;
+            this.subtractionRadioBtn.Text = "Subtraction";
+            this.subtractionRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // addittionRadioBtn
+            // 
+            this.addittionRadioBtn.AutoSize = true;
+            this.addittionRadioBtn.Checked = true;
+            this.addittionRadioBtn.Location = new System.Drawing.Point(6, 19);
+            this.addittionRadioBtn.Name = "addittionRadioBtn";
+            this.addittionRadioBtn.Size = new System.Drawing.Size(63, 17);
+            this.addittionRadioBtn.TabIndex = 0;
+            this.addittionRadioBtn.TabStop = true;
+            this.addittionRadioBtn.Text = "Addition";
+            this.addittionRadioBtn.UseVisualStyleBackColor = true;
             // 
             // playBtn
             // 
@@ -125,6 +126,7 @@
             this.playBtn.TabIndex = 7;
             this.playBtn.Text = "PLAY";
             this.playBtn.UseVisualStyleBackColor = true;
+            this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
             // 
             // pictureBox1
             // 

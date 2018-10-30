@@ -12,9 +12,36 @@ namespace MathApp
 {
     public partial class HomeForm : Form
     {
+        private GameForm gameForm;
+        private UserForm userForm;
+        private ScoreForm scoreForm;
+
+        public string username;
+        public int age;
+
         public HomeForm()
         {
             InitializeComponent();
+
+            gameForm = new GameForm();
+            userForm = new UserForm();
+            scoreForm = new ScoreForm();
+
+            
+        }
+
+        private void editUserBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            userForm.ShowDialog();
+            this.Show();
+        }
+
+        private void playBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            gameForm.ShowDialog();
+            this.Show();
         }
     }
 }

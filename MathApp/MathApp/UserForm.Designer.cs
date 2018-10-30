@@ -47,7 +47,6 @@
             this.nameLbl.Size = new System.Drawing.Size(38, 13);
             this.nameLbl.TabIndex = 0;
             this.nameLbl.Text = "Name:";
-            this.nameLbl.Click += new System.EventHandler(this.nameLbl_Click);
             // 
             // ageLbl
             // 
@@ -57,7 +56,6 @@
             this.ageLbl.Size = new System.Drawing.Size(29, 13);
             this.ageLbl.TabIndex = 1;
             this.ageLbl.Text = "Age:";
-            this.ageLbl.Click += new System.EventHandler(this.ageLbl_Click);
             // 
             // nameTxtBox
             // 
@@ -65,7 +63,6 @@
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.Size = new System.Drawing.Size(100, 20);
             this.nameTxtBox.TabIndex = 2;
-            this.nameTxtBox.TextChanged += new System.EventHandler(this.nameTxtBox_TextChanged);
             // 
             // userFormLbl
             // 
@@ -85,6 +82,7 @@
             this.okBtn.TabIndex = 6;
             this.okBtn.Text = "Confirm";
             this.okBtn.UseVisualStyleBackColor = true;
+            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
             // pictureBox1
             // 
@@ -127,7 +125,6 @@
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Math Game - User Data";
-            this.Load += new System.EventHandler(this.UserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ageNumeric)).EndInit();
             this.ResumeLayout(false);
