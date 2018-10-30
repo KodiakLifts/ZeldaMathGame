@@ -82,6 +82,7 @@
             this.divisionRadioBtn.Size = new System.Drawing.Size(62, 17);
             this.divisionRadioBtn.TabIndex = 3;
             this.divisionRadioBtn.TabStop = true;
+            this.divisionRadioBtn.Tag = "3";
             this.divisionRadioBtn.Text = "Division";
             this.divisionRadioBtn.UseVisualStyleBackColor = true;
             // 
@@ -93,6 +94,7 @@
             this.multiplicationRadioBtn.Size = new System.Drawing.Size(86, 17);
             this.multiplicationRadioBtn.TabIndex = 2;
             this.multiplicationRadioBtn.TabStop = true;
+            this.multiplicationRadioBtn.Tag = "2";
             this.multiplicationRadioBtn.Text = "Multiplication";
             this.multiplicationRadioBtn.UseVisualStyleBackColor = true;
             // 
@@ -104,6 +106,7 @@
             this.subtractionRadioBtn.Size = new System.Drawing.Size(79, 17);
             this.subtractionRadioBtn.TabIndex = 1;
             this.subtractionRadioBtn.TabStop = true;
+            this.subtractionRadioBtn.Tag = "1";
             this.subtractionRadioBtn.Text = "Subtraction";
             this.subtractionRadioBtn.UseVisualStyleBackColor = true;
             // 
@@ -116,6 +119,7 @@
             this.addittionRadioBtn.Size = new System.Drawing.Size(63, 17);
             this.addittionRadioBtn.TabIndex = 0;
             this.addittionRadioBtn.TabStop = true;
+            this.addittionRadioBtn.Tag = "0";
             this.addittionRadioBtn.Text = "Addition";
             this.addittionRadioBtn.UseVisualStyleBackColor = true;
             // 

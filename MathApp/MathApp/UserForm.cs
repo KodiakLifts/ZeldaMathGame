@@ -21,7 +21,6 @@ namespace MathApp
             username = "";
             age = 0;
             
-
         }
 
         private void okBtn_Click(object sender, EventArgs e)

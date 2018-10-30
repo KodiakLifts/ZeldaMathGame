@@ -12,9 +12,13 @@ namespace MathApp
 {
     public partial class GameForm : Form
     {
+        public int gameMode;
+
         public GameForm()
         {
             InitializeComponent();
+
+            gameMode = 0;
         }
 
         private void answerTxtBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -24,6 +28,11 @@ namespace MathApp
             {
                 e.Handled = true;
             }
+
+        }
+
+        private void submitNextBtn_Click(object sender, EventArgs e)
+        {
 
         }
     }

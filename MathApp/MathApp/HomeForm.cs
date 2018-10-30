@@ -12,14 +12,15 @@ namespace MathApp
 {
     public partial class HomeForm : Form
     {
-        private GameForm gameForm;
-        private UserForm userForm;
-        private ScoreForm scoreForm;
+        GameForm gameForm;
+        UserForm userForm;
+        ScoreForm scoreForm;
 
-        private string username;
-        private int age;
+        string username;
+        int age;
+        int gameMode;
 
-        private enum GameMode {Addition, Subtraction, Multiplication, Division };
+        enum GameMode {Addition, Subtraction, Multiplication, Division};
 
         public HomeForm()
         {
@@ -28,6 +29,8 @@ namespace MathApp
             gameForm = new GameForm();
             userForm = new UserForm();
             scoreForm = new ScoreForm();
+
+            gameMode = 0;
 
             DisplayUserData();
 
@@ -53,7 +56,10 @@ namespace MathApp
 
         private void playBtn_Click(object sender, EventArgs e)
         {
+            var checkedButton = gameModesGrpBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            int gameMode = checkedButton.TabIndex;
             Hide();
+            gameForm.gameMode = gameMode;
             gameForm.ShowDialog();
             Show();
         }

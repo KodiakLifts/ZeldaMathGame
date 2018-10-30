@@ -56,6 +56,7 @@
             this.submitNextBtn.TabIndex = 1;
             this.submitNextBtn.Text = "SUBMIT";
             this.submitNextBtn.UseVisualStyleBackColor = true;
+            this.submitNextBtn.Click += new System.EventHandler(this.submitNextBtn_Click);
             // 
             // questionLbl
             // 
