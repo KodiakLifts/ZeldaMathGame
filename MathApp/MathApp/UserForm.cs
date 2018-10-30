@@ -16,5 +16,30 @@ namespace MathApp
         {
             InitializeComponent();
         }
+
+        private void UserForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ageTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ageLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
