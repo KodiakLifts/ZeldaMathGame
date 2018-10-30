@@ -31,11 +31,12 @@
             this.nameLbl = new System.Windows.Forms.Label();
             this.ageLbl = new System.Windows.Forms.Label();
             this.nameTxtBox = new System.Windows.Forms.TextBox();
-            this.ageTxtBox = new System.Windows.Forms.TextBox();
             this.userFormLbl = new System.Windows.Forms.Label();
             this.okBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ageNumeric = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ageNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLbl
@@ -66,14 +67,6 @@
             this.nameTxtBox.TabIndex = 2;
             this.nameTxtBox.TextChanged += new System.EventHandler(this.nameTxtBox_TextChanged);
             // 
-            // ageTxtBox
-            // 
-            this.ageTxtBox.Location = new System.Drawing.Point(223, 102);
-            this.ageTxtBox.Name = "ageTxtBox";
-            this.ageTxtBox.Size = new System.Drawing.Size(100, 20);
-            this.ageTxtBox.TabIndex = 3;
-            this.ageTxtBox.TextChanged += new System.EventHandler(this.ageTxtBox_TextChanged);
-            // 
             // userFormLbl
             // 
             this.userFormLbl.AutoSize = true;
@@ -101,15 +94,32 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // ageNumeric
+            // 
+            this.ageNumeric.Location = new System.Drawing.Point(223, 102);
+            this.ageNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ageNumeric.Name = "ageNumeric";
+            this.ageNumeric.Size = new System.Drawing.Size(100, 20);
+            this.ageNumeric.TabIndex = 8;
+            this.ageNumeric.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 360);
+            this.Controls.Add(this.ageNumeric);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.userFormLbl);
-            this.Controls.Add(this.ageTxtBox);
             this.Controls.Add(this.nameTxtBox);
             this.Controls.Add(this.ageLbl);
             this.Controls.Add(this.nameLbl);
@@ -119,6 +129,7 @@
             this.Text = "Math Game - User Data";
             this.Load += new System.EventHandler(this.UserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ageNumeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,9 +140,9 @@
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.Label ageLbl;
         private System.Windows.Forms.TextBox nameTxtBox;
-        private System.Windows.Forms.TextBox ageTxtBox;
         private System.Windows.Forms.Label userFormLbl;
         private System.Windows.Forms.Button okBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NumericUpDown ageNumeric;
     }
 }
