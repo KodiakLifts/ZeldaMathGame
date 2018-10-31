@@ -14,11 +14,27 @@ namespace MathApp
     {
         private Game game;
         private bool nextQuestion;
+        private Stack<Image> questionImages;
 
         public GameForm()
         {
             InitializeComponent();
             nextQuestion = false;
+            questionImages = new Stack<Image>();
+            pushImages();
+        }
+
+        private void pushImages()
+        {
+            questionImages.Push(Properties.Resources.question10);
+            questionImages.Push(Properties.Resources.question9);
+            questionImages.Push(Properties.Resources.question8);
+            questionImages.Push(Properties.Resources.question7);
+            questionImages.Push(Properties.Resources.question6);
+            questionImages.Push(Properties.Resources.question5);
+            questionImages.Push(Properties.Resources.question4);
+            questionImages.Push(Properties.Resources.question3);
+            questionImages.Push(Properties.Resources.question2);
         }
 
         public void newGame(Game game)
@@ -69,6 +85,14 @@ namespace MathApp
                         submitNextBtn.Text = "NEXT QUESTION";
                     } else
                     {
+                        try
+                        {
+                            pictureBox.Image = questionImages.Pop();
+                        }
+                        catch(Exception ex)
+                        {
+                            Console.Write("Last question image reached.");
+                        }
                         answerTxtBox.ReadOnly = false;
                         answerTxtBox.Text = "";
                         correctLbl.Visible = false;
@@ -81,6 +105,7 @@ namespace MathApp
                         } else
                         {
                             answerTxtBox.ReadOnly = true;
+                            answerTxtBox.Visible = false;
                             questionLbl.Text = "";
                             submitNextBtn.Text = "VIEW SCORE";
                             nextQuestion = false;
@@ -102,6 +127,8 @@ namespace MathApp
             answerTxtBox.ReadOnly = true;
             answerTxtBox.Visible = false;
             questionLbl.Visible = false;
+            questionImages.Clear();
+            pushImages();
             Hide();
         }
 

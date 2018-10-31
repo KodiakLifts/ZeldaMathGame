@@ -110,9 +110,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\homeImage.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\userdataimage.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +126,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\icon_M7u_icon.ico" />
+    <None Include="Resources\question10.png" />
+    <None Include="Resources\question9.png" />
+    <None Include="Resources\question8.png" />
+    <None Include="Resources\question7.png" />
+    <None Include="Resources\question6.png" />
+    <None Include="Resources\question5.png" />
+    <None Include="Resources\question4.png" />
+    <None Include="Resources\question3.png" />
+    <None Include="Resources\question2.png" />
+    <None Include="Resources\question1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
