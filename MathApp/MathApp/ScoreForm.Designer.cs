@@ -28,38 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScoreForm));
             this.scoreLbl = new System.Windows.Forms.Label();
-            this.scoreTitleLbl = new System.Windows.Forms.Label();
             this.homeBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(101, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 278);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // scoreLbl
             // 
             this.scoreLbl.AutoSize = true;
-            this.scoreLbl.Location = new System.Drawing.Point(233, 27);
+            this.scoreLbl.Location = new System.Drawing.Point(98, 27);
             this.scoreLbl.Name = "scoreLbl";
-            this.scoreLbl.Size = new System.Drawing.Size(36, 13);
+            this.scoreLbl.Size = new System.Drawing.Size(219, 13);
             this.scoreLbl.TabIndex = 1;
-            this.scoreLbl.Text = "10/10";
-            // 
-            // scoreTitleLbl
-            // 
-            this.scoreTitleLbl.AutoSize = true;
-            this.scoreTitleLbl.Location = new System.Drawing.Point(189, 27);
-            this.scoreTitleLbl.Name = "scoreTitleLbl";
-            this.scoreTitleLbl.Size = new System.Drawing.Size(38, 13);
-            this.scoreTitleLbl.TabIndex = 2;
-            this.scoreTitleLbl.Text = "Score:";
+            this.scoreLbl.Text = "Congratulations Joe! You got 10/10 in 00:30!";
             // 
             // homeBtn
             // 
@@ -71,6 +54,14 @@
             this.homeBtn.UseVisualStyleBackColor = true;
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(101, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(278, 278);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // ScoreForm
             // 
             this.AcceptButton = this.homeBtn;
@@ -78,12 +69,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 381);
             this.Controls.Add(this.homeBtn);
-            this.Controls.Add(this.scoreTitleLbl);
             this.Controls.Add(this.scoreLbl);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ScoreForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ScoreForm";
+            this.Text = "Zelda Math Adventures";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -94,7 +86,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label scoreLbl;
-        private System.Windows.Forms.Label scoreTitleLbl;
         private System.Windows.Forms.Button homeBtn;
     }
 }

@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserForm));
             this.nameLbl = new System.Windows.Forms.Label();
             this.ageLbl = new System.Windows.Forms.Label();
             this.nameTxtBox = new System.Windows.Forms.TextBox();
             this.userFormLbl = new System.Windows.Forms.Label();
             this.confirmBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ageNumeric = new System.Windows.Forms.NumericUpDown();
             this.nameValidationLbl = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ageNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLbl
@@ -68,11 +69,11 @@
             // userFormLbl
             // 
             this.userFormLbl.AutoSize = true;
-            this.userFormLbl.Location = new System.Drawing.Point(213, 31);
+            this.userFormLbl.Location = new System.Drawing.Point(204, 38);
             this.userFormLbl.Name = "userFormLbl";
-            this.userFormLbl.Size = new System.Drawing.Size(62, 13);
+            this.userFormLbl.Size = new System.Drawing.Size(84, 13);
             this.userFormLbl.TabIndex = 4;
-            this.userFormLbl.Text = "Math Game";
+            this.userFormLbl.Text = "User Information";
             // 
             // confirmBtn
             // 
@@ -84,14 +85,6 @@
             this.confirmBtn.Text = "Confirm";
             this.confirmBtn.UseVisualStyleBackColor = true;
             this.confirmBtn.Click += new System.EventHandler(this.okBtn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 174);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(449, 195);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // ageNumeric
             // 
@@ -120,6 +113,15 @@
             this.nameValidationLbl.Text = "You must enter a name.";
             this.nameValidationLbl.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MathApp.Properties.Resources.userdataimage;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 174);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(449, 195);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // UserForm
             // 
             this.AcceptButton = this.confirmBtn;
@@ -134,12 +136,13 @@
             this.Controls.Add(this.nameTxtBox);
             this.Controls.Add(this.ageLbl);
             this.Controls.Add(this.nameLbl);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Math Game - User Data";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Zelda Math Adventures";
             ((System.ComponentModel.ISupportInitialize)(this.ageNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.editUserBtn = new System.Windows.Forms.Button();
             this.usernameLbl = new System.Windows.Forms.Label();
             this.gameModesGrpBox = new System.Windows.Forms.GroupBox();
@@ -36,10 +37,10 @@
             this.subtractionRadioBtn = new System.Windows.Forms.RadioButton();
             this.addittionRadioBtn = new System.Windows.Forms.RadioButton();
             this.playBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.ageLbl = new System.Windows.Forms.Label();
             this.gameModesGrpBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // editUserBtn
@@ -85,6 +86,7 @@
             this.divisionRadioBtn.Tag = "3";
             this.divisionRadioBtn.Text = "Division";
             this.divisionRadioBtn.UseVisualStyleBackColor = true;
+            this.divisionRadioBtn.CheckedChanged += new System.EventHandler(this.divisionRadioBtn_CheckedChanged);
             // 
             // multiplicationRadioBtn
             // 
@@ -97,6 +99,7 @@
             this.multiplicationRadioBtn.Tag = "2";
             this.multiplicationRadioBtn.Text = "Multiplication";
             this.multiplicationRadioBtn.UseVisualStyleBackColor = true;
+            this.multiplicationRadioBtn.CheckedChanged += new System.EventHandler(this.multiplicationRadioBtn_CheckedChanged);
             // 
             // subtractionRadioBtn
             // 
@@ -109,6 +112,7 @@
             this.subtractionRadioBtn.Tag = "1";
             this.subtractionRadioBtn.Text = "Subtraction";
             this.subtractionRadioBtn.UseVisualStyleBackColor = true;
+            this.subtractionRadioBtn.CheckedChanged += new System.EventHandler(this.subtractionRadioBtn_CheckedChanged);
             // 
             // addittionRadioBtn
             // 
@@ -122,6 +126,7 @@
             this.addittionRadioBtn.Tag = "0";
             this.addittionRadioBtn.Text = "Addition";
             this.addittionRadioBtn.UseVisualStyleBackColor = true;
+            this.addittionRadioBtn.CheckedChanged += new System.EventHandler(this.addittionRadioBtn_CheckedChanged);
             // 
             // playBtn
             // 
@@ -133,13 +138,14 @@
             this.playBtn.UseVisualStyleBackColor = true;
             this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(162, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 278);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(162, 29);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(278, 278);
+            this.pictureBox.TabIndex = 8;
+            this.pictureBox.TabStop = false;
             // 
             // ageLbl
             // 
@@ -157,17 +163,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 381);
             this.Controls.Add(this.ageLbl);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.playBtn);
             this.Controls.Add(this.gameModesGrpBox);
             this.Controls.Add(this.usernameLbl);
             this.Controls.Add(this.editUserBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Math Game - Home";
+            this.Text = "Zelda Math Adventures";
             this.gameModesGrpBox.ResumeLayout(false);
             this.gameModesGrpBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,7 +191,7 @@
         private System.Windows.Forms.RadioButton subtractionRadioBtn;
         private System.Windows.Forms.RadioButton addittionRadioBtn;
         private System.Windows.Forms.Button playBtn;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label ageLbl;
     }
 }

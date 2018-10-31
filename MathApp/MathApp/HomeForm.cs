@@ -59,9 +59,29 @@ namespace MathApp
             gameForm.newGame(game);
             Hide();
             gameForm.ShowDialog();
-            scoreForm.viewScore(game.getScore(), game.getTime()); 
+            scoreForm.viewScore(user.name, game.getNumberCorrect() + " out of 10", game.getTime()); 
             scoreForm.ShowDialog();
             Show();
+        }
+
+        private void addittionRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox.Image = Properties.Resources.homeAdd;
+        }
+
+        private void subtractionRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox.Image = Properties.Resources.homeSub;
+        }
+
+        private void multiplicationRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox.Image = Properties.Resources.homeMult;
+        }
+
+        private void divisionRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox.Image = Properties.Resources.homeDiv;
         }
     }
 }

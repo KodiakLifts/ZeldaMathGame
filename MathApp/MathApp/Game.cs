@@ -55,7 +55,7 @@ namespace MathApp
             points[currentQuestion-1] = userAnswer == answers[currentQuestion-1];
         }
 
-        public string getScore()
+        public int getNumberCorrect()
         {
             int score = 0;
             for(int i = 0; i < 10; i++)
@@ -65,8 +65,9 @@ namespace MathApp
                     score++;
                 }
             }
-            return score + " out of 10" ;
+            return score;
         }
+
 
         public int getAnswer()
         {
