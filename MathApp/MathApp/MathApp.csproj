@@ -125,6 +125,9 @@
     <None Include="Resources\homeSub.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\poorScore.jpg" />
+    <None Include="Resources\perfectScore.jpg" />
+    <None Include="Resources\goodScore.jpg" />
     <Content Include="Resources\icon_M7u_icon.ico" />
     <None Include="Resources\question10.png" />
     <None Include="Resources\question9.png" />

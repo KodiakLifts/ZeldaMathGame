@@ -59,9 +59,27 @@ namespace MathApp
             gameForm.newGame(game);
             Hide();
             gameForm.ShowDialog();
-            scoreForm.viewScore(user.name, game.getNumberCorrect() + " out of 10", game.getTime()); 
+            scoreForm.viewScore(user.name, game.getNumberCorrect() + " out of 10", game.getTime());
+            scoreForm.setScoreImage(scoreImageIndex(game.getNumberCorrect()));
             scoreForm.ShowDialog();
             Show();
+        }
+
+        private int scoreImageIndex(int numberCorrect)
+        {
+            if(numberCorrect < 5)
+            {
+                return 0;
+            }
+            if(numberCorrect < 10)
+            {
+                return 1;
+            }
+            if(numberCorrect == 10)
+            {
+                return 2;
+            }
+            return 2;
         }
 
         private void addittionRadioBtn_CheckedChanged(object sender, EventArgs e)

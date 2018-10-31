@@ -63,6 +63,16 @@ namespace MathApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap goodScore {
+            get {
+                object obj = ResourceManager.GetObject("goodScore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap homeAdd {
             get {
                 object obj = ResourceManager.GetObject("homeAdd", resourceCulture);
@@ -96,6 +106,26 @@ namespace MathApp.Properties {
         internal static System.Drawing.Bitmap homeSub {
             get {
                 object obj = ResourceManager.GetObject("homeSub", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap perfectScore {
+            get {
+                object obj = ResourceManager.GetObject("perfectScore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap poorScore {
+            get {
+                object obj = ResourceManager.GetObject("poorScore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

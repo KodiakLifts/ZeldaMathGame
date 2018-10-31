@@ -163,4 +163,13 @@
   <data name="question9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\question9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="goodScore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\goodScore.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="perfectScore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\perfectScore.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="poorScore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\poorScore.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

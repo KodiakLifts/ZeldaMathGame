@@ -13,15 +13,25 @@ namespace MathApp
     public partial class ScoreForm : Form
     {
         public string score { get; set; }
+        private List<Image> scoreImages;
 
         public ScoreForm()
         {
             InitializeComponent();
+            scoreImages = new List<Image>();
+            scoreImages.Add(Properties.Resources.poorScore);
+            scoreImages.Add(Properties.Resources.goodScore);
+            scoreImages.Add(Properties.Resources.perfectScore);
+        }
+
+        public void setScoreImage(int imageNumber)
+        {
+            pictureBox.Image = scoreImages[imageNumber];
         }
 
         public void viewScore(string name, string score, string time)
         {
-            scoreLbl.Text = "Congratulations " + name + "! You got " + score + " in " + time + "!";
+            scoreLbl.Text = name + " got " + score + " in " + time + "!";
         }
 
         private void homeBtn_Click(object sender, EventArgs e)
