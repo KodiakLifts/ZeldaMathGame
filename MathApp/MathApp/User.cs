@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 namespace MathApp
 {
-    
+    /// <summary>
+    /// Class for storing user information.
+    /// </summary>
     public class User
     {
+        /// <summary>
+        /// Users name.
+        /// </summary>
         public string name { get; set; }
+        /// <summary>
+        /// Users age.
+        /// </summary>
         public int age { get; set; }
-        public int additionScore { get; set; }
-        public int subtractionScore { get; set; }
-        public int multiplicationScore { get; set; }
-        public int divisionScore { get; set; }
 
         public User(string name, int age)
         {

@@ -10,9 +10,18 @@ using System.Windows.Forms;
 
 namespace MathApp
 {
+    /// <summary>
+    /// Form for managing user information.
+    /// </summary>
     public partial class UserForm : Form
     {
+        /// <summary>
+        /// Temporary variable for username.
+        /// </summary>
         public string username;
+        /// <summary>
+        /// Temporary variable for user age.
+        /// </summary>
         public int userAge;
 
         public UserForm()
@@ -20,6 +29,11 @@ namespace MathApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles user click to confirm username and age.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void okBtn_Click(object sender, EventArgs e)
         {
             if (!nameTxtBox.Text.Equals(""))
@@ -27,7 +41,6 @@ namespace MathApp
                 nameValidationLbl.Visible = false;
                 username = nameTxtBox.Text;
                 userAge =  (int)ageNumeric.Value;
-
                 Hide();
             } else
             {
