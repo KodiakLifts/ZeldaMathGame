@@ -38,7 +38,7 @@
             // scoreLbl
             // 
             this.scoreLbl.AutoSize = true;
-            this.scoreLbl.Location = new System.Drawing.Point(181, 27);
+            this.scoreLbl.Location = new System.Drawing.Point(178, 27);
             this.scoreLbl.Name = "scoreLbl";
             this.scoreLbl.Size = new System.Drawing.Size(118, 13);
             this.scoreLbl.TabIndex = 1;

@@ -37,8 +37,8 @@
             this.subtractionRadioBtn = new System.Windows.Forms.RadioButton();
             this.addittionRadioBtn = new System.Windows.Forms.RadioButton();
             this.playBtn = new System.Windows.Forms.Button();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.ageLbl = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.gameModesGrpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -138,15 +138,6 @@
             this.playBtn.UseVisualStyleBackColor = true;
             this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(162, 29);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(278, 278);
-            this.pictureBox.TabIndex = 8;
-            this.pictureBox.TabStop = false;
-            // 
             // ageLbl
             // 
             this.ageLbl.AutoSize = true;
@@ -155,6 +146,16 @@
             this.ageLbl.Size = new System.Drawing.Size(29, 13);
             this.ageLbl.TabIndex = 9;
             this.ageLbl.Text = "Age:";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(162, 29);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(278, 278);
+            this.pictureBox.TabIndex = 8;
+            this.pictureBox.TabStop = false;
             // 
             // HomeForm
             // 

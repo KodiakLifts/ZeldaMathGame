@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,8 @@ namespace MathApp
         private Game game;
         private bool nextQuestion;
         private Stack<Image> questionImages;
+        private SoundPlayer correctSound = new SoundPlayer("questionCorrectSound.wav");
+        private SoundPlayer incorrectSound = new SoundPlayer("questionIncorrectSound.wav");
 
         public GameForm()
         {
@@ -76,9 +79,11 @@ namespace MathApp
                         game.answerCurrentQuestion(userAnswer);
                         if (game.getAnswer() == userAnswer)
                         {
+                            correctSound.Play();
                             correctLbl.Text = "Correct!";
                         } else
                         {
+                            incorrectSound.Play();
                             correctLbl.Text = "Incorrect!";
                         }
                         nextQuestion = true;
@@ -129,6 +134,7 @@ namespace MathApp
             questionLbl.Visible = false;
             questionImages.Clear();
             pushImages();
+            pictureBox.Image = Properties.Resources.question1;
             Hide();
         }
 

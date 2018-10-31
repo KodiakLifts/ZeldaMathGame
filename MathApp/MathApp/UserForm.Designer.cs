@@ -115,6 +115,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::MathApp.Properties.Resources.userdataimage;
             this.pictureBox1.Location = new System.Drawing.Point(13, 174);
             this.pictureBox1.Name = "pictureBox1";

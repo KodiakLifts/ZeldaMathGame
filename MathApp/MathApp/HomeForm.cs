@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +21,9 @@ namespace MathApp
 
         Game game;
         User user;
-        
+
+        SoundPlayer scoreSound = new SoundPlayer("scoreSound.wav");
+
         GameMode gameMode;
 
         public HomeForm()
@@ -61,6 +64,7 @@ namespace MathApp
             gameForm.ShowDialog();
             scoreForm.viewScore(user.name, game.getNumberCorrect() + " out of 10", game.getTime());
             scoreForm.setScoreImage(scoreImageIndex(game.getNumberCorrect()));
+            scoreSound.Play();
             scoreForm.ShowDialog();
             Show();
         }
