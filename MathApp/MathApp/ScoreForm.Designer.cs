@@ -69,6 +69,7 @@
             this.homeBtn.TabIndex = 3;
             this.homeBtn.Text = "HOME";
             this.homeBtn.UseVisualStyleBackColor = true;
+            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
             // 
             // ScoreForm
             // 

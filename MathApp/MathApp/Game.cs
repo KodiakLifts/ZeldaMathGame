@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace MathApp
 {
-    class Game
+    public class Game
     {
         public GameMode gameMode { get; set; }
         public string[] questions { get; set; }
         public int[] answers { get; set; }
+        public bool[] points { get; set; }
+        public bool gameOver { get; set; }
 
         private Random rnd;
-        private bool gameOver;
         private int currentQuestion;
 
         public Game(GameMode gameMode)
@@ -22,16 +23,48 @@ namespace MathApp
             rnd = new Random();
             questions = new string[10];
             answers = new int[10];
+            points = new bool[10];
             generateQuestions();
             gameOver = false;
             currentQuestion = 0;
         }
 
+        public void answerCurrentQuestion(int userAnswer)
+        {
+            points[currentQuestion-1] = userAnswer == answers[currentQuestion-1];
+        }
+
+        public string getScore()
+        {
+            int score = 0;
+            for(int i = 0; i < 10; i++)
+            {
+                if(points[i] == true)
+                {
+                    score++;
+                }
+            }
+            return score + " out of 10" ;
+        }
+
+        public int getAnswer()
+        {
+            return answers[currentQuestion-1];
+        }
+
         public string nextQuestion()
         {
-            string question = questions[currentQuestion];
-            currentQuestion++;
-            return question;
+            if(currentQuestion < 10)
+            {
+                string question = questions[currentQuestion];
+                currentQuestion++;
+                return question;
+            } else
+            {
+                gameOver = true;
+                return "GAME_OVER";
+            }
+            
         }
 
         private void generateQuestions()
@@ -64,8 +97,11 @@ namespace MathApp
                     {
                         do
                         {
-                            n1 = rnd.Next(1, 11);
-                            n2 = rnd.Next(1, 11);
+                            do
+                            {
+                                n1 = rnd.Next(1, 11);
+                                n2 = rnd.Next(1, 11);
+                            } while (n1 < n2);
                             q = "" + n1 + " - " + n2 + " = ";
                         } while (questions.Contains(q));
                         
@@ -94,11 +130,13 @@ namespace MathApp
                     {
                         do
                         {
-                            n1 = rnd.Next(1, 11);
-                            n2 = rnd.Next(1, 11);
+                            do
+                            {
+                                n1 = rnd.Next(1, 11);
+                                n2 = rnd.Next(1, 11);
+                            } while (n1 % n2 != 0);
                             q = "" + n1 + " / " + n2 + " = ";
-                        } while (n1 % n2 != 0 && questions.Contains(q));
-
+                        } while (questions.Contains(q));
                         a = n1 / n2;
                         questions[i] = q;
                         answers[i] = a;

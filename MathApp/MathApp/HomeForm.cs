@@ -18,6 +18,7 @@ namespace MathApp
         UserForm userForm;
         ScoreForm scoreForm;
 
+        Game game;
         User user;
         
         GameMode gameMode;
@@ -30,11 +31,8 @@ namespace MathApp
             userForm = new UserForm();
             scoreForm = new ScoreForm();
             user = new User("", 0);
-
           
             DisplayUserData();
-            gameMode = GameMode.Addition;
-
         }
 
         private void DisplayUserData()
@@ -58,9 +56,12 @@ namespace MathApp
         {
             var checkedButton = gameModesGrpBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
             gameMode = (GameMode)checkedButton.TabIndex;
-            gameForm.newGame(gameMode);
+            game = new Game(gameMode);
+            gameForm.newGame(game);
             Hide();
             gameForm.ShowDialog();
+            scoreForm.viewScore(game.getScore()); 
+            scoreForm.ShowDialog();
             Show();
         }
     }

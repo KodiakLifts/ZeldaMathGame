@@ -12,25 +12,18 @@ namespace MathApp
 {
     public partial class GameForm : Form
     {
-        private GameMode gameMode;
         private Game game;
-        private int questionNumber;
         private bool nextQuestion;
 
         public GameForm()
         {
             InitializeComponent();
-
-            gameMode = GameMode.Addition;
-            game = new Game(gameMode);
-            questionNumber = 0;
             nextQuestion = false;
         }
 
-        public void newGame(GameMode gameMode)
+        public void newGame(Game game)
         {
-            this.gameMode = gameMode;
-            this.game = new Game(gameMode);
+            this.game = game;
             questionLbl.Text = game.nextQuestion();
         }
 
@@ -46,29 +39,50 @@ namespace MathApp
 
         private void submitNextBtn_Click(object sender, EventArgs e)
         {
-            if(answerTxtBox.Text != "")
-            {
-                if (!nextQuestion)
+            if(submitNextBtn.Text != "VIEW SCORE")
+            {           
+                if(answerTxtBox.Text != "")
                 {
-                    correctLbl.Visible = true;
-                    if(game.answers[questionNumber] == Int32.Parse(answerTxtBox.Text))
+                    if (!nextQuestion)
                     {
-                        correctLbl.Text = "Correct!";
+                        answerTxtBox.ReadOnly = true;
+                        correctLbl.Visible = true;
+                        int userAnswer = Int32.Parse(answerTxtBox.Text);
+                        game.answerCurrentQuestion(userAnswer);
+                        if (game.getAnswer() == userAnswer)
+                        {
+                            correctLbl.Text = "Correct!";
+                        } else
+                        {
+                            correctLbl.Text = "Incorrect!";
+                        }
+                        nextQuestion = true;
+                        submitNextBtn.Text = "NEXT QUESTION";
                     } else
                     {
-                        correctLbl.Text = "Incorrect!";
+                        answerTxtBox.ReadOnly = false;
+                        answerTxtBox.Text = "";
+                        correctLbl.Visible = false;
+                        string question = game.nextQuestion();
+                        if(question != "GAME_OVER")
+                        {
+                            questionLbl.Text = question;
+                            submitNextBtn.Text = "SUBMIT";
+                            nextQuestion = false;
+                        } else
+                        {
+                            answerTxtBox.ReadOnly = true;
+                            questionLbl.Text = "";
+                            submitNextBtn.Text = "VIEW SCORE";
+                            nextQuestion = false;
+                        }
                     }
-                    nextQuestion = true;
-                    submitNextBtn.Text = "NEXT QUESTION";
-                } else
-                {
-                    answerTxtBox.Text = "";
-                    correctLbl.Visible = false;
-                    questionNumber++;
-                    questionLbl.Text = game.nextQuestion();
-                    submitNextBtn.Text = "SUBMIT";
-                    nextQuestion = false;
                 }
+            } else
+            {
+                answerTxtBox.ReadOnly = false;
+                submitNextBtn.Text = "SUBMIT";
+                Hide();
             }
         }
     }

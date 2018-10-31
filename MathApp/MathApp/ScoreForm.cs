@@ -12,9 +12,21 @@ namespace MathApp
 {
     public partial class ScoreForm : Form
     {
+        public string score { get; set; }
+
         public ScoreForm()
         {
             InitializeComponent();
+        }
+
+        public void viewScore(string score)
+        {
+            scoreLbl.Text = score;
+        }
+
+        private void homeBtn_Click(object sender, EventArgs e)
+        {
+            Hide();
         }
     }
 }
