@@ -14,6 +14,8 @@ namespace MathApp
         public bool[] points { get; set; }
         public bool gameOver { get; set; }
 
+        private int timeSeconds;
+        private TimeSpan time;
         private Random rnd;
         private int currentQuestion;
 
@@ -27,6 +29,25 @@ namespace MathApp
             generateQuestions();
             gameOver = false;
             currentQuestion = 0;
+            timeSeconds = 0;
+            time = TimeSpan.FromSeconds(timeSeconds);
+        }
+
+        public void resetTime()
+        {
+            timeSeconds = 0;
+            time = TimeSpan.FromSeconds(timeSeconds);
+        }
+
+        public string getTime()
+        {
+            return time.ToString(@"mm\:ss");
+        }
+
+        public void incrementTime()
+        {
+            timeSeconds++;
+            time = TimeSpan.FromSeconds(timeSeconds);
         }
 
         public void answerCurrentQuestion(int userAnswer)

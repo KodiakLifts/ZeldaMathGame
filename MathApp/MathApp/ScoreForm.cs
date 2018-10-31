@@ -19,9 +19,9 @@ namespace MathApp
             InitializeComponent();
         }
 
-        public void viewScore(string score)
+        public void viewScore(string score, string time)
         {
-            scoreLbl.Text = score;
+            scoreLbl.Text = score + " in " + time;
         }
 
         private void homeBtn_Click(object sender, EventArgs e)

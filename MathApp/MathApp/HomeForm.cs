@@ -26,7 +26,6 @@ namespace MathApp
         public HomeForm()
         {
             InitializeComponent();
-
             gameForm = new GameForm();
             userForm = new UserForm();
             scoreForm = new ScoreForm();
@@ -60,7 +59,7 @@ namespace MathApp
             gameForm.newGame(game);
             Hide();
             gameForm.ShowDialog();
-            scoreForm.viewScore(game.getScore()); 
+            scoreForm.viewScore(game.getScore(), game.getTime()); 
             scoreForm.ShowDialog();
             Show();
         }

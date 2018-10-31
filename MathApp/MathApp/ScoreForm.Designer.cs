@@ -46,7 +46,7 @@
             // scoreLbl
             // 
             this.scoreLbl.AutoSize = true;
-            this.scoreLbl.Location = new System.Drawing.Point(244, 27);
+            this.scoreLbl.Location = new System.Drawing.Point(233, 27);
             this.scoreLbl.Name = "scoreLbl";
             this.scoreLbl.Size = new System.Drawing.Size(36, 13);
             this.scoreLbl.TabIndex = 1;
@@ -55,7 +55,7 @@
             // scoreTitleLbl
             // 
             this.scoreTitleLbl.AutoSize = true;
-            this.scoreTitleLbl.Location = new System.Drawing.Point(200, 27);
+            this.scoreTitleLbl.Location = new System.Drawing.Point(189, 27);
             this.scoreTitleLbl.Name = "scoreTitleLbl";
             this.scoreTitleLbl.Size = new System.Drawing.Size(38, 13);
             this.scoreTitleLbl.TabIndex = 2;

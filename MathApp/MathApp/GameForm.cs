@@ -39,8 +39,17 @@ namespace MathApp
 
         private void submitNextBtn_Click(object sender, EventArgs e)
         {
-            if(submitNextBtn.Text != "VIEW SCORE")
-            {           
+            if(submitNextBtn.Text == "START")
+            {
+                gameTimer.Start();
+                answerTxtBox.ReadOnly = false;
+                answerTxtBox.Visible = true;
+                submitNextBtn.Text = "SUBMIT";
+                questionLbl.Visible = true;
+            }
+            if(submitNextBtn.Text != "VIEW SCORE" && submitNextBtn.Text != "START")
+            {
+                
                 if(answerTxtBox.Text != "")
                 {
                     if (!nextQuestion)
@@ -80,10 +89,31 @@ namespace MathApp
                 }
             } else
             {
-                answerTxtBox.ReadOnly = false;
-                submitNextBtn.Text = "SUBMIT";
-                Hide();
+                closingOperations();
             }
+        }
+
+        private void closingOperations()
+        {
+            gameTimer.Stop();
+            timerLbl.Text = "00:00";
+            answerTxtBox.Visible = false;
+            submitNextBtn.Text = "START";
+            answerTxtBox.ReadOnly = true;
+            answerTxtBox.Visible = false;
+            questionLbl.Visible = false;
+            Hide();
+        }
+
+        private void gameTimer_Tick(object sender, EventArgs e)
+        {
+            game.incrementTime();
+            timerLbl.Text = game.getTime();
+        }
+
+        private void GameForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            closingOperations();
         }
     }
 }
