@@ -54,7 +54,7 @@ namespace MathApp
             catch(Exception ex)
             {
                 Console.Write(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." +
-                    MethodInfo.GetCurrentMethod().Name + " -> " + "Invalid image number." +
+                    MethodInfo.GetCurrentMethod().Name + " -> " + "Failed to load image." +
                     "\n" + ex.Message);
             }
         }

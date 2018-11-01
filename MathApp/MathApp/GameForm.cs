@@ -8,16 +8,35 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace MathApp
 {
+    /// <summary>
+    /// Form for displaying active game.
+    /// </summary>
     public partial class GameForm : Form
     {
+        /// <summary>
+        /// Game object shared with home form.
+        /// </summary>
         private Game game;
+        /// <summary>
+        /// Boolean value for determining if submit button should display "next question".
+        /// </summary>
         private bool nextQuestion;
+        /// <summary>
+        /// Stack for storing images displayed for each question.
+        /// </summary>
         private Stack<Image> questionImages;
-        private SoundPlayer correctSound = new SoundPlayer("questionCorrectSound.wav");
-        private SoundPlayer incorrectSound = new SoundPlayer("questionIncorrectSound.wav");
+        /// <summary>
+        /// Sound for when correct answer provided.
+        /// </summary>
+        private SoundPlayer correctSound;
+        /// <summary>
+        /// Sound for when incorrect answer provided.
+        /// </summary>
+        private SoundPlayer incorrectSound;
 
         public GameForm()
         {
@@ -25,27 +44,67 @@ namespace MathApp
             nextQuestion = false;
             questionImages = new Stack<Image>();
             pushImages();
+            try
+            {
+                correctSound = new SoundPlayer("questionCorrectSound.wav");
+            }catch(Exception ex)
+            {
+                Console.Write(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." +
+                    MethodInfo.GetCurrentMethod().Name + " -> " + "Failed to load 'correct' sound." +
+                    "\n" + ex.Message);
+            }
+            try
+            {
+                incorrectSound = new SoundPlayer("questionIncorrectSound.wav");
+            }
+            catch(Exception ex)
+            {
+                Console.Write(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." +
+                   MethodInfo.GetCurrentMethod().Name + " -> " + "Failed to load 'incorrect' sound." +
+                   "\n" + ex.Message);
+            }
         }
 
+        /// <summary>
+        /// Pushes all question images to the stack.
+        /// </summary>
         private void pushImages()
         {
-            questionImages.Push(Properties.Resources.question10);
-            questionImages.Push(Properties.Resources.question9);
-            questionImages.Push(Properties.Resources.question8);
-            questionImages.Push(Properties.Resources.question7);
-            questionImages.Push(Properties.Resources.question6);
-            questionImages.Push(Properties.Resources.question5);
-            questionImages.Push(Properties.Resources.question4);
-            questionImages.Push(Properties.Resources.question3);
-            questionImages.Push(Properties.Resources.question2);
+            try
+            {
+                questionImages.Push(Properties.Resources.question10);
+                questionImages.Push(Properties.Resources.question9);
+                questionImages.Push(Properties.Resources.question8);
+                questionImages.Push(Properties.Resources.question7);
+                questionImages.Push(Properties.Resources.question6);
+                questionImages.Push(Properties.Resources.question5);
+                questionImages.Push(Properties.Resources.question4);
+                questionImages.Push(Properties.Resources.question3);
+                questionImages.Push(Properties.Resources.question2);
+            }
+            catch(Exception ex)
+            {
+                Console.Write(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." +
+                   MethodInfo.GetCurrentMethod().Name + " -> " + "Failed to load question images." +
+                   "\n" + ex.Message);
+            }
         }
 
+        /// <summary>
+        /// Initialize a new game.
+        /// </summary>
+        /// <param name="game"></param>
         public void newGame(Game game)
         {
             this.game = game;
             questionLbl.Text = game.nextQuestion();
         }
 
+        /// <summary>
+        /// Validates user input in answer box to only be integers.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void answerTxtBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -53,9 +112,17 @@ namespace MathApp
             {
                 e.Handled = true;
             }
-
         }
 
+        /// <summary>
+        /// Determines whether the submit button state.
+        /// "START" starts the current game and timer.
+        /// "SUBMIT" submits the current answer for scoring.
+        /// "NEXT QUESTION" retrieves the next question to be answered.
+        /// "VIEW SCORE" ends game and displays score form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void submitNextBtn_Click(object sender, EventArgs e)
         {
             if(submitNextBtn.Text == "START")
@@ -68,7 +135,6 @@ namespace MathApp
             }
             if(submitNextBtn.Text != "VIEW SCORE" && submitNextBtn.Text != "START")
             {
-                
                 if(answerTxtBox.Text != "")
                 {
                     if (!nextQuestion)
@@ -96,7 +162,7 @@ namespace MathApp
                         }
                         catch(Exception ex)
                         {
-                            Console.Write("Last question image reached.");
+                            Console.Write("Last question image reached.\n");
                         }
                         answerTxtBox.ReadOnly = false;
                         answerTxtBox.Text = "";
@@ -123,6 +189,9 @@ namespace MathApp
             }
         }
 
+        /// <summary>
+        /// Resets game form when game ended or form closed.
+        /// </summary>
         private void closingOperations()
         {
             gameTimer.Stop();
@@ -138,12 +207,22 @@ namespace MathApp
             Hide();
         }
 
+        /// <summary>
+        /// When timer started, increments timer label every one second.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             game.incrementTime();
             timerLbl.Text = game.getTime();
         }
 
+        /// <summary>
+        /// Calls closing operations when form closed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GameForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             closingOperations();
