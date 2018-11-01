@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace MathApp
 {
@@ -146,73 +147,82 @@ namespace MathApp
             int a;
             string q;
 
-            switch (gameMode)
+            try
             {
-                case GameMode.Addition:
-                    for (int i = 0; i < 10; i++)
-                    {
-                        do
-                        {
-                            n1 = rnd.Next(1, 11);
-                            n2 = rnd.Next(1, 11);
-                            q = "" + n1 + " + " + n2 + " = ";
-                        } while (questions.Contains(q));
-
-                        a = n1 + n2;
-                        questions[i] = q;
-                        answers[i] = a;
-                    }
-                    break;
-                case GameMode.Subtraction:
-                    for (int i = 0; i < 10; i++)
-                    {
-                        do
+                switch (gameMode)
+                {
+                    case GameMode.Addition:
+                        for (int i = 0; i < 10; i++)
                         {
                             do
                             {
                                 n1 = rnd.Next(1, 11);
                                 n2 = rnd.Next(1, 11);
-                            } while (n1 < n2);
-                            q = "" + n1 + " - " + n2 + " = ";
-                        } while (questions.Contains(q));
-                        
-                        a = n1 - n2;
-                        questions[i] = q;
-                        answers[i] = a;
-                    }
-                    break;
-                case GameMode.Multiplication: 
-                    for (int i = 0; i < 10; i++)
-                    {
-                        do
-                        {
-                            n1 = rnd.Next(1, 11);
-                            n2 = rnd.Next(1, 11);
-                            q = "" + n1 + " x " + n2 + " = ";
-                        } while (questions.Contains(q));
+                                q = "" + n1 + " + " + n2 + " = ";
+                            } while (questions.Contains(q));
 
-                        a = n1 * n2;
-                        questions[i] = q;
-                        answers[i] = a;
-                    }
-                    break;
-                case GameMode.Division:
-                    for (int i = 0; i < 10; i++)
-                    {
-                        do
+                            a = n1 + n2;
+                            questions[i] = q;
+                            answers[i] = a;
+                        }
+                        break;
+                    case GameMode.Subtraction:
+                        for (int i = 0; i < 10; i++)
+                        {
+                            do
+                            {
+                                do
+                                {
+                                    n1 = rnd.Next(1, 11);
+                                    n2 = rnd.Next(1, 11);
+                                } while (n1 < n2);
+                                q = "" + n1 + " - " + n2 + " = ";
+                            } while (questions.Contains(q));
+
+                            a = n1 - n2;
+                            questions[i] = q;
+                            answers[i] = a;
+                        }
+                        break;
+                    case GameMode.Multiplication:
+                        for (int i = 0; i < 10; i++)
                         {
                             do
                             {
                                 n1 = rnd.Next(1, 11);
                                 n2 = rnd.Next(1, 11);
-                            } while (n1 % n2 != 0);
-                            q = "" + n1 + " / " + n2 + " = ";
-                        } while (questions.Contains(q));
-                        a = n1 / n2;
-                        questions[i] = q;
-                        answers[i] = a;
-                    }
-                    break;
+                                q = "" + n1 + " x " + n2 + " = ";
+                            } while (questions.Contains(q));
+
+                            a = n1 * n2;
+                            questions[i] = q;
+                            answers[i] = a;
+                        }
+                        break;
+                    case GameMode.Division:
+                        for (int i = 0; i < 10; i++)
+                        {
+                            do
+                            {
+                                do
+                                {
+                                    n1 = rnd.Next(1, 11);
+                                    n2 = rnd.Next(1, 11);
+                                } while (n1 % n2 != 0);
+                                q = "" + n1 + " / " + n2 + " = ";
+                            } while (questions.Contains(q));
+                            a = n1 / n2;
+                            questions[i] = q;
+                            answers[i] = a;
+                        }
+                        break;
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.Write(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." +
+                    MethodInfo.GetCurrentMethod().Name + " -> " + "Failed to generate questions." +
+                    "\n" + ex.Message);
             }
         }
     }
