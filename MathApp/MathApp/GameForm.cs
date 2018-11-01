@@ -145,11 +145,29 @@ namespace MathApp
                         game.answerCurrentQuestion(userAnswer);
                         if (game.getAnswer() == userAnswer)
                         {
-                            correctSound.Play();
+                            try
+                            {
+                                correctSound.Play();
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.Write(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." +
+                                    MethodInfo.GetCurrentMethod().Name + " -> " + "Could not play 'correct' sound." +
+                                        "\n" + ex.Message);
+                            }
                             correctLbl.Text = "Correct!";
                         } else
                         {
-                            incorrectSound.Play();
+                            try
+                            {
+                                incorrectSound.Play();
+                            }
+                            catch(Exception ex)
+                            {
+                                Console.Write(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." +
+                                    MethodInfo.GetCurrentMethod().Name + " -> " + "Could not play 'incorrect' sound." +
+                                        "\n" + ex.Message);
+                            }
                             correctLbl.Text = "Incorrect!";
                         }
                         nextQuestion = true;
