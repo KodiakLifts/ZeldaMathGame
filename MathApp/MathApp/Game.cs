@@ -156,8 +156,8 @@ namespace MathApp
                         {
                             do
                             {
-                                n1 = rnd.Next(1, 11);
-                                n2 = rnd.Next(1, 11);
+                                n1 = rnd.Next(0, 11);
+                                n2 = rnd.Next(0, 11);
                                 q = "" + n1 + " + " + n2 + " = ";
                             } while (questions.Contains(q));
 
@@ -173,8 +173,8 @@ namespace MathApp
                             {
                                 do
                                 {
-                                    n1 = rnd.Next(1, 11);
-                                    n2 = rnd.Next(1, 11);
+                                    n1 = rnd.Next(0, 11);
+                                    n2 = rnd.Next(0, 11);
                                 } while (n1 < n2);
                                 q = "" + n1 + " - " + n2 + " = ";
                             } while (questions.Contains(q));
@@ -189,8 +189,8 @@ namespace MathApp
                         {
                             do
                             {
-                                n1 = rnd.Next(1, 11);
-                                n2 = rnd.Next(1, 11);
+                                n1 = rnd.Next(0, 11);
+                                n2 = rnd.Next(0, 11);
                                 q = "" + n1 + " x " + n2 + " = ";
                             } while (questions.Contains(q));
 
@@ -206,7 +206,7 @@ namespace MathApp
                             {
                                 do
                                 {
-                                    n1 = rnd.Next(1, 11);
+                                    n1 = rnd.Next(0, 11);
                                     n2 = rnd.Next(1, 11);
                                 } while (n1 % n2 != 0);
                                 q = "" + n1 + " / " + n2 + " = ";
